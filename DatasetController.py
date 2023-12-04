@@ -44,6 +44,7 @@ class DatasetController:
             end_ratio += r
             start_index = int(len(dataset) * start_ratio)
             end_index = int(len(dataset) * end_ratio)
+            print(start_index, end_index)
             datasets.append(dataset[start_index:end_index])
             start_ratio = end_ratio
         return datasets
@@ -54,7 +55,7 @@ class DatasetController:
         self.test_dataset.to_csv(f"{directory_path}/dataset_test.csv", index=False)
 
 controller = DatasetController()
-controller.save("./datasets")
+# controller.save("./datasets")
 
 
 # f"<s>[INST] {input} [/INST] output </s>"
